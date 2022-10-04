@@ -1,4 +1,4 @@
-## Simple ETL
+## Simple ETL Pipeline
 
 A simple ETL pipeline
 

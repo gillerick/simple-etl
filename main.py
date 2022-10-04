@@ -9,10 +9,11 @@ spark = pyspark.sql.SparkSession \
 movies_df = spark.read \
     .format("jdbc") \
     .option("url", "jdbc:postgresql://localhost:5432/movies_db") \
-    .option("db_table", "movies") \
+    .option("dbtable", "movies") \
     .option("user", "user") \
     .option("password", "pass") \
     .option("driver", "org.postgresql.Driver") \
     .load()
 
-print(movies_df.show())
+if __name__ == "__main__":
+    print(movies_df.show())

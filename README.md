@@ -28,3 +28,24 @@ postgres
 ```bash 
 $ docker start movies_db
 ```
+
+### Database schema
+
+```postgresql
+CREATE TABLE `movies` (
+  `id` SERIAL PRIMARY KEY,
+  `name` varchar,
+  `description` varchar,
+  `category` varchar
+);
+
+CREATE TABLE `users` (
+  `id` SERIAL PRIMARY KEY,
+  `movie_id` int,
+  `rating` varchar
+);
+
+ALTER TABLE `movies` ADD FOREIGN KEY (`id`) REFERENCES `users` (`movie_id`);
+
+```
+
